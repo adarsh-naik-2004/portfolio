@@ -567,7 +567,7 @@ const parseContent = (content) => {
 export default function BlogPost() {
   const { darkMode } = useTheme();
   const { id } = useParams();
-  const post = blogPosts[id]; // Default to post 2 for demo
+  const post = blogPosts[id];
 
   if (!post) {
     return (
