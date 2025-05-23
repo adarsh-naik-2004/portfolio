@@ -1,0 +1,27 @@
+@import "tailwindcss";
+body {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-duration: 300ms;
+}
+
+.container {
+  max-width: 80rem; /* equivalent to max-w-7xl */
+  margin-left: auto; /* equivalent to mx-auto */
+  margin-right: auto;
+  padding-left: 1rem; /* equivalent to px-4 */
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 1.5rem; /* sm:px-6 */
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 2rem; /* lg:px-8 */
+    padding-right: 2rem;
+  }
+}
