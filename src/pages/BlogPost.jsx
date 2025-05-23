@@ -506,21 +506,39 @@ The future belongs to distributed systems, and microservices provide the foundat
   }
 };
 
-const parseContent = (content) => {
+const parseContent = (content, darkMode) => {
   return content
     .split('\n')
     .map((line, index) => {
       // Headers
       if (line.startsWith('### ')) {
-        return <h3 key={index} className="text-2xl font-bold mt-10 mb-6 text-white leading-tight">{line.substring(4)}</h3>;
+        return (
+          <h3 key={index} className={`text-2xl font-bold mt-10 mb-6 leading-tight ${
+            darkMode ? 'text-purple-300' : 'text-purple-700'
+          }`}>
+            {line.substring(4)}
+          </h3>
+        );
       }
       if (line.startsWith('## ')) {
-        return <h2 key={index} className="text-3xl font-bold mt-12 mb-8 text-white leading-tight">{line.substring(3)}</h2>;
+        return (
+          <h2 key={index} className={`text-3xl font-bold mt-12 mb-8 leading-tight ${
+            darkMode ? 'text-white' : 'text-gray-900'
+          }`}>
+            {line.substring(3)}
+          </h2>
+        );
       }
       
       // Bold text patterns
       if (line.startsWith('**') && line.endsWith('**')) {
-        return <p key={index} className="text-xl font-semibold mt-6 mb-4 text-purple-300">{line.slice(2, -2)}</p>;
+        return (
+          <p key={index} className={`text-xl font-semibold mt-6 mb-4 ${
+            darkMode ? 'text-purple-300' : 'text-purple-600'
+          }`}>
+            {line.slice(2, -2)}
+          </p>
+        );
       }
       
       // List items
@@ -528,9 +546,17 @@ const parseContent = (content) => {
         const match = line.match(/- \*\*(.*?)\*\*: (.*)/);
         if (match) {
           return (
-            <div key={index} className="mb-4 pl-4 border-l-2 border-purple-500">
-              <span className="font-semibold text-purple-300">{match[1]}</span>
-              <span className="text-gray-300">: {match[2]}</span>
+            <div key={index} className={`mb-4 pl-4 border-l-2 ${
+              darkMode ? 'border-purple-500' : 'border-purple-300'
+            }`}>
+              <span className={`font-semibold ${
+                darkMode ? 'text-purple-300' : 'text-purple-600'
+              }`}>
+                {match[1]}
+              </span>
+              <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                : {match[2]}
+              </span>
             </div>
           );
         }
@@ -538,7 +564,13 @@ const parseContent = (content) => {
       
       // Regular list items
       if (line.startsWith('- ')) {
-        return <li key={index} className="text-gray-300 text-lg leading-relaxed mb-2">{line.substring(2)}</li>;
+        return (
+          <li key={index} className={`text-lg leading-relaxed mb-2 ${
+            darkMode ? 'text-gray-300' : 'text-gray-600'
+          }`}>
+            {line.substring(2)}
+          </li>
+        );
       }
       
       // Empty lines
@@ -548,12 +580,16 @@ const parseContent = (content) => {
       
       // Regular paragraphs
       if (line.trim()) {
-        // Handle inline bold text
-        const processedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-purple-300">$1</strong>');
+        const processedLine = line.replace(/\*\*(.*?)\*\*/g, `<strong class="font-semibold ${
+          darkMode ? 'text-purple-300' : 'text-purple-600'
+        }">$1</strong>`);
+        
         return (
           <p 
             key={index} 
-            className="text-gray-300 text-lg leading-relaxed mb-6"
+            className={`text-lg leading-relaxed mb-6 ${
+              darkMode ? 'text-gray-300' : 'text-gray-600'
+            }`}
             dangerouslySetInnerHTML={{ __html: processedLine }}
           />
         );
@@ -575,10 +611,12 @@ export default function BlogPost() {
         <Navbar />
         <div className={`min-h-screen pt-24 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
           <div className="container mx-auto px-6 py-20 text-center">
-            <h1 className="text-4xl font-bold mb-4 text-white">
+            <h1 className={`text-4xl font-bold mb-4 ${
+              darkMode ? 'text-white' : 'text-gray-900'
+            }`}>
               Blog Post Not Found
             </h1>
-            <p className="text-lg mb-8 text-white">
+            <p className={`text-lg mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
               The blog post you're looking for doesn't exist.
             </p>
             <Link 
@@ -598,20 +636,25 @@ export default function BlogPost() {
     <div className={darkMode ? 'dark' : ''}>
       <Navbar />
       
-      {/* Article Header */}
-      <article className={`pt-24 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'} min-h-screen`}>
+      <article className={`pt-24 min-h-screen ${
+        darkMode ? 'bg-gray-900' : 'bg-gray-50'
+      }`}>
         <div className="container mx-auto px-6 py-12">
           {/* Breadcrumb */}
           <nav className="mb-8">
             <div className="flex items-center space-x-2 text-sm">
               <Link 
                 to="/blog" 
-                className="hover:underline text-purple-400 transition-colors"
+                className={`hover:underline transition-colors ${
+                  darkMode ? 'text-purple-400' : 'text-purple-600'
+                }`}
               >
                 Blog
               </Link>
-              <span className="text-gray-400">→</span>
-              <span className="text-gray-300 truncate">
+              <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>→</span>
+              <span className={`truncate ${
+                darkMode ? 'text-gray-300' : 'text-gray-600'
+              }`}>
                 {post.title}
               </span>
             </div>
@@ -620,27 +663,41 @@ export default function BlogPost() {
           {/* Article Header */}
           <header className="max-w-4xl mx-auto mb-16">
             <div className="mb-6">
-              <span className="px-4 py-2 rounded-full text-sm font-medium bg-purple-900/50 text-purple-300 border border-purple-700">
+              <span className={`px-4 py-2 rounded-full text-sm font-medium border ${
+                darkMode 
+                  ? 'bg-purple-900/50 text-purple-300 border-purple-700' 
+                  : 'bg-purple-100 text-purple-700 border-purple-200'
+              }`}>
                 {post.category}
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight text-white">
+            <h1 className={`text-4xl md:text-6xl font-bold mb-8 leading-tight ${
+              darkMode ? 'text-white' : 'text-gray-900'
+            }`}>
               {post.title}
             </h1>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                  darkMode 
+                    ? 'bg-gradient-to-r from-purple-500 to-pink-500' 
+                    : 'bg-gradient-to-r from-purple-400 to-pink-400'
+                }`}>
                   <span className="text-white font-bold text-lg">
                     {post.author.split(' ').map(n => n[0]).join('')}
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-white text-lg">
+                  <p className={`font-semibold text-lg ${
+                    darkMode ? 'text-white' : 'text-gray-900'
+                  }`}>
                     {post.author}
                   </p>
-                  <div className="flex items-center gap-2 text-sm text-gray-400">
+                  <div className={`flex items-center gap-2 text-sm ${
+                    darkMode ? 'text-gray-400' : 'text-gray-500'
+                  }`}>
                     <time>{post.date}</time>
                     <span>•</span>
                     <span>{post.readTime}</span>
@@ -654,7 +711,11 @@ export default function BlogPost() {
               {post.tags.map((tag, i) => (
                 <span 
                   key={i}
-                  className="px-4 py-2 rounded-lg text-sm bg-gray-800 text-gray-300 border border-gray-700 hover:border-purple-500 transition-colors"
+                  className={`px-4 py-2 rounded-lg text-sm border transition-colors ${
+                    darkMode 
+                      ? 'bg-gray-800 text-gray-300 border-gray-700 hover:border-purple-500' 
+                      : 'bg-gray-100 text-gray-700 border-gray-200 hover:border-purple-300'
+                  }`}
                 >
                   #{tag}
                 </span>
@@ -668,7 +729,7 @@ export default function BlogPost() {
                 alt={post.title}
                 className="w-full h-64 md:h-96 object-cover"
                 onError={(e) => {
-                  e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbGUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzc0MTUxIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSIgZmlsbD0iIzlDQTNBRiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiPk1pY3Jvc2VydmljZXMgQXJjaGl0ZWN0dXJlPC90ZXh0Pgo8L3N2Zz4K';
+                  e.target.src = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzc0MTUxIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSIgZmlsbD0iIzlDQTNBRiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiPk1pY3Jvc2VydmljZXMgQXJjaGl0ZWN0dXJlPC90ZXh0Pgo8L3N2Zz4K`;
                 }}
               />
             </div>
@@ -678,12 +739,14 @@ export default function BlogPost() {
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               <div className="article-content">
-                {parseContent(post.content)}
+                {parseContent(post.content, darkMode)}
               </div>
             </div>
 
             {/* Article Footer */}
-            <footer className="mt-20 pt-8 border-t border-gray-700">
+            <footer className={`mt-20 pt-8 border-t ${
+              darkMode ? 'border-gray-700' : 'border-gray-200'
+            }`}>
               <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
                 <Link 
                   to="/blog"
