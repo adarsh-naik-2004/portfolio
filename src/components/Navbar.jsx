@@ -50,7 +50,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-6 ml-20">
             <NavLink to="/#about" darkMode={darkMode}>About</NavLink>
             <NavLink to="/projects" darkMode={darkMode}>Projects</NavLink>
-            <NavLink to="/blog" darkMode={darkMode}>Blog</NavLink>
+            <NavLink to="/blog" darkMode={darkMode}>Blogs</NavLink>
           </div>
 
           {/* Right Section */}
@@ -144,7 +144,7 @@ export default function Navbar() {
               Projects
             </MobileNavLink>
             <MobileNavLink to="/blog" darkMode={darkMode} onClick={closeMenu}>
-              Blog
+              Blogs
             </MobileNavLink>
             <a
               href="/adarsh_resume.pdf"

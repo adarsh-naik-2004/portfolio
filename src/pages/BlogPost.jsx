@@ -623,7 +623,7 @@ export default function BlogPost() {
               to="/blog"
               className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300"
             >
-              Back to Blog
+              Back to Blogs
             </Link>
           </div>
         </div>
@@ -649,7 +649,7 @@ export default function BlogPost() {
                   darkMode ? 'text-purple-400' : 'text-purple-600'
                 }`}
               >
-                Blog
+                Blogs
               </Link>
               <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>→</span>
               <span className={`truncate ${
@@ -752,7 +752,7 @@ export default function BlogPost() {
                   to="/blog"
                   className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
                 >
-                  ← Back to Blog
+                  ← Back to Blogs
                 </Link>
               </div>
             </footer>
