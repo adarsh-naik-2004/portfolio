@@ -57,7 +57,7 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             {/* Resume Button - Desktop */}
             <a
-              href="/adarsh_resume.pdf"
+              href="/Adarsh_Naik_Resume.pdf"
               download
               className={`hidden md:flex items-center px-4 py-2 rounded-lg font-medium border-2 transition-all duration-300 hover:scale-105 ${
                 darkMode 
@@ -147,7 +147,7 @@ export default function Navbar() {
               Blogs
             </MobileNavLink>
             <a
-              href="/adarsh_resume.pdf"
+              href="/Adarsh_Naik_Resume.pdf"
               download
               className={`px-4 py-3 rounded-lg font-medium text-center transition-colors duration-300 ${
                 darkMode 

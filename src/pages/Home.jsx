@@ -58,7 +58,7 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8">
                 <a 
-                  href="/adarsh_resume.pdf"
+                  href="/Adarsh_Naik_Resume.pdf"
                   download
                   className="group relative px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
