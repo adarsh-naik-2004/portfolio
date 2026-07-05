@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 // This would typically come from an API or database
 const blogPosts = {
-  3: {
+  2: {
     title: "The End of an Era: Virat Kohli and the Spirit of Test Cricket",
     date: "May 23, 2025",
     readTime: "3 min read",
@@ -56,7 +56,7 @@ Thank you, King Kohli. Test cricket is richer because of you. And so am I.
 
   `,
   },
-  2: {
+  3: {
     title:
       "Demystifying Microservices: A Complete Guide to Modern Distributed Architecture",
     date: "Jan 19, 2025",
