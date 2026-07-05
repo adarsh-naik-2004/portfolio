@@ -1,301 +1,165 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { useTheme } from '../ThemeContext';
 
 const projects = [
   {
-    title: 'CricStore',
-    description: 'A full-stack microservices-based eCommerce platform for cricket gear with real-time updates and modular design.',
-    longDescription: 'Built with MERN, Kafka, PostgreSQL, and AWS, CricStore features multi-tenancy, RSA-based authentication, live shopping via WebSockets, and modular microservices for scalable eCommerce.',
-    tech: ['MERN', 'Next.js', 'PostgreSQL', 'Kafka', 'Docker', 'Kubernetes', 'AWS', 'WebSockets'],
-    image: '/mico.png',
-    demo: '',
+    title: 'CricStore', status: 'In progress', category: 'Full Stack',
+    image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?w=900&q=80&auto=format&fit=crop',
+    points: [
+      'Microservices eCommerce for cricket gear — 5 isolated services, RSA auth, multi-tenancy.',
+      'Kafka + WebSockets for real-time updates and live shopping.',
+      'EAV modeling in PostgreSQL; Docker + GitHub Actions CI/CD on Render.',
+      'SonarCloud for coverage, duplication, and maintainability tracking.',
+    ],
+    tech: ['React', 'Next.js', 'PostgreSQL', 'Kafka', 'Docker', 'AWS'],
     code: 'https://github.com/adarsh-naik-2004',
-    category: 'Full Stack',
-    status: 'In Progress'
   },
   {
-    title: 'FileVault',
-    description: 'A secure C++ file encryption system with AES-style logic and multi-file batch support.',
-    longDescription: 'FileVault is a modular encryption tool built in C++ using AES-style transformations and parallel processing. It supports batch encryption with secure key handling via environment variables.',
-    tech: ['C++', 'Cryptography', 'Parallel Processing'],
-    image: '/filevault.jpg',
-    demo: '',
-    code: 'https://github.com/adarsh-naik-2004/FileVault',
-    category: 'Low Level',
-    status: 'Completed'
+    title: 'AI Interview Platform', status: 'Completed', category: 'Full Stack',
+    image: 'public/ai-article-1-banner-shot-min.jpg',
+    points: [
+      'Interview simulator using Gemini AI — real-time feedback, scoring, insights.',
+      'JWT auth, optimised MongoDB schemas, React Query for data fetching.',
+    ],
+    tech: ['React', 'Node.js', 'Express', 'MongoDB', 'Gemini API'],
+    code: 'https://github.com/adarsh-naik-2004/interview-platform',
   },
   {
-  title: 'AI Interview Platform',
-  description: 'A full-stack interview simulator with Gemini AI, performance analytics, and real-time scoring.',
-  longDescription: 'This React and Express-based platform simulates AI-driven interviews with secure authentication, real-time feedback from Gemini AI, and user dashboards showing interview history, scores, and insights. It supports JWT auth, protected routes, and a polished UI with Tailwind.',
-  tech: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT', 'Gemini API', 'Tailwind', 'React Query'],
-  image: '/image.png', // Replace with actual image
-  demo: '', // Add if deployed
-  code: 'https://github.com/adarsh-naik-2004/interview-platform',
-  category: 'Full Stack',
-  status: 'Completed',
-  featured: true
-},
-  {
-    title: 'Custom Reverse Proxy',
-    description: 'A high-throughput reverse proxy with load balancing, health checks, and YAML-based config.',
-    longDescription: 'This reverse proxy, built with Node.js, Redis, and Nginx, uses worker-thread clustering and circuit breaker patterns to handle 8000+ concurrent connections with <100ms latency.',
-    tech: ['Node.js', 'Nginx', 'Redis', 'YAML', 'Zod', 'Clustering'],
-    image: '/reverse-proxy.jpg',
-    demo: '',
+    title: 'Custom Reverse Proxy', status: 'Completed', category: 'Infrastructure',
+    image: 'public/proxy.png',
+    points: [
+      'High-throughput reverse proxy from scratch — 8000+ concurrent connections at <100ms.',
+      'Worker-thread clustering and circuit breaker patterns for resilience.',
+      'YAML config, Redis caching, health checks.',
+    ],
+    tech: ['Node.js', 'Nginx', 'Redis', 'YAML'],
     code: 'https://github.com/adarsh-naik-2004/proxy',
-    category: 'DevOps',
-    status: 'Completed'
   },
- {
-  title: 'Mindwell',
-  description: 'A full-stack mental health assessment tool with multimodal sentiment analysis using audio and text inputs.',
-  longDescription: 'Mindwell integrates BERT-based text embeddings and MFCC-processed audio features into a multimodal deep learning model using TensorFlow. It includes a Flask web app with speech recognition, real-time chatbot, and secure user authentication for comprehensive mental health assessment.',
-  tech: ['Python', 'TensorFlow', 'Flask', 'BERT', 'MFCC', 'SpeechRecognition', 'NLP', 'SQLAlchemy'],
-  image: '/mindwell_final (1).png', // Replace later with actual image
-  demo: '', // Add if deployed
-  code: '', // Add if public repo available
-  category: 'AI/ML',
-  status: 'Completed',
-  featured: true
- },
- {
-  title: 'Network Slicing Classification',
-  description: 'A KNN-based classification model to identify 5G network slicing types for optimized resource allocation.',
-  longDescription: 'This project applies a K-Nearest Neighbors classifier to 5G network data to accurately classify network slice types. It includes data preprocessing, feature extraction, and evaluation metrics to validate improvements over baseline models.',
-  tech: ['Python', 'Machine Learning', 'KNN'],
-  image: '/knn_pro.png', // Replace later with actual image
-  demo: '', // Optional
-  code: 'https://github.com/adarsh-naik-2004/Network-Slicing-Classification',
-  category: 'ML/Networks',
-  status: 'Completed',
-  featured: false
-},
-{
-  title: 'Text Summarizer',
-  description: 'An NLP-based text summarization tool tailored for general documents and domain-specific reviews.',
-  longDescription: 'Built using Python and Flask, this app leverages NLP techniques to generate meaningful summaries from noisy and unstructured input like car reviews. It includes a clean web interface, summarization accuracy of 77.6%, and interactive visualizations using graphs.',
-  tech: ['Python', 'NLP', 'Flask', 'JavaScript', 'HTML', 'CSS'],
-  image: '/summarizer.png', // Replace with real image
-  demo: '', // Add when deployed
-  code: 'https://github.com/adarsh-naik-2004/NLP-Based-Text-Summarizer',
-  category: 'NLP',
-  status: 'Completed',
-  featured: false
-},
   {
-  title: 'Audio Equalizer',
-  description: 'A MATLAB-based DSP project that implements an interactive audio equalizer with real-time feedback.',
-  longDescription: 'Developed as part of a DSP course, this project features an audio equalizer in MATLAB with user-adjustable frequency sliders, vocal/instrumental splitting, and real-time audio feedback. It integrates DSP concepts like FFT, Butterworth filters, and audio sampling.',
-  tech: ['MATLAB', 'DSP', 'FFT', 'Butterworth Filter', 'Audio Processing'],
-  image: '/matlab_2.jpg', // Replace with an actual image if needed
-  demo: '', // MATLAB-based project, so demo is not required
-  code: 'https://github.com/adarsh-naik-2004/Audio-Equalizer-using-Matlab',
-  category: 'Signal Processing',
-  status: 'Completed',
-  featured: false
- },
-{
-    title: 'AR Try-On App',
-    description: 'An AR-based try-on experience for watches and furniture with realistic wrist alignment.',
-    longDescription: 'Built with Unity, Blender, and AR frameworks, this app supports marker-based and marker-less AR try-ons, improving user experience with advanced depth masking and wrist detection.',
-    tech: ['Unity', 'C#', 'AR', 'Blender', 'Marker Tracking'],
-    image: '/ar_final.jpg',
-    demo: '', // Optional
+    title: 'FileVault', status: 'Completed', category: 'Systems',
+    image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=900&q=80&auto=format&fit=crop',
+    points: [
+      'AES-256-CBC encryption utility with recursive directory processing.',
+      'Parallel execution via fork() + shared memory; semaphore-synchronised.',
+    ],
+    tech: ['C++', 'OpenSSL', 'IPC'],
+    code: 'https://github.com/adarsh-naik-2004/FileVault',
+  },
+  {
+    title: 'Mindwell', status: 'Completed', category: 'AI / ML',
+    image: 'public/mindwell.jpg',
+    points: [
+      'Multimodal mental-health assessment — BERT text + MFCC audio in TensorFlow.',
+      'Flask web app with speech recognition, real-time chatbot, secure auth.',
+    ],
+    tech: ['Python', 'TensorFlow', 'Flask', 'BERT', 'NLP'],
+    code: '',
+  },
+  {
+    title: 'Network Slicing Classification', status: 'Completed', category: 'ML / Networks',
+    image: 'https://images.unsplash.com/photo-1683322499436-f4383dd59f5a?w=900&q=80&auto=format&fit=crop',
+    points: [
+      'KNN classifier on 5G network data to identify slice types for resource allocation.',
+      'Preprocessing, feature extraction, baseline comparison.',
+    ],
+    tech: ['Python', 'Machine Learning', 'KNN'],
+    code: 'https://github.com/adarsh-naik-2004/Network-Slicing-Classification',
+  },
+  {
+    title: 'Text Summarizer', status: 'Completed', category: 'NLP',
+    image: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900&q=80&auto=format&fit=crop',
+    points: [
+      'NLP summarisation on noisy inputs like car reviews — 77.6% accuracy.',
+      'Clean web interface with interactive visualisations.',
+    ],
+    tech: ['Python', 'NLP', 'Flask'],
+    code: 'https://github.com/adarsh-naik-2004/NLP-Based-Text-Summarizer',
+  },
+  {
+    title: 'Audio Equalizer', status: 'Completed', category: 'Signal Processing',
+    image: 'https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=900&q=80&auto=format&fit=crop',
+    points: [
+      'Interactive MATLAB equalizer with frequency sliders and vocal/instrumental splitting.',
+      'FFT + Butterworth filters for real-time audio feedback.',
+    ],
+    tech: ['MATLAB', 'DSP', 'FFT'],
+    code: 'https://github.com/adarsh-naik-2004/Audio-Equalizer-using-Matlab',
+  },
+  {
+    title: 'AR Try-On App', status: 'Completed', category: 'AR',
+    image: 'https://images.unsplash.com/photo-1592478411213-6153e4ebc07d?w=900&q=80&auto=format&fit=crop',
+    points: [
+      'AR try-on for watches and furniture — marker-based and marker-less tracking.',
+      'Depth masking + wrist detection for realism.',
+    ],
+    tech: ['Unity', 'C#', 'Blender'],
     code: 'https://github.com/adarsh-naik-2004/AR-Try-On_Watch_Furniture',
-    category: 'Augmented Reality',
-    status: 'Completed',
-    featured: false,
-  }
-
-
+  },
 ];
 
-export default function Projects() {
-  const { darkMode } = useTheme();
-  
-  const currentProjects = projects.filter(project => project.status === 'In Progress');
-  const completedProjects = projects.filter(project => project.status === 'Completed');
-
-  const ProjectCard = ({ project, index }) => (
-    <div 
-      key={index}
-      className={`group rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl ${
-        darkMode 
-          ? 'bg-gray-800 border border-gray-700' 
-          : 'bg-white border border-gray-200'
-      }`}
-    >
-      {/* Project Image */}
-      <div className="relative overflow-hidden">
-        <img 
-          src={project.image} 
-          alt={project.title}
-          className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        
-        {/* Category Badge */}
-        <div className="absolute top-4 left-4">
-          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-            darkMode 
-              ? 'bg-blue-900/80 text-blue-300 border border-blue-700' 
-              : 'bg-blue-100/80 text-blue-700 border border-blue-200'
-          }`}>
-            {project.category}
-          </span>
+function ProjectItem({ title, status, category, image, points, tech, code }) {
+  return (
+    <div className="py-8 border-b border-line last:border-b-0 grid sm:grid-cols-[12rem_1fr] gap-6 items-start">
+      {image && (
+        <div className="rounded-md overflow-hidden border border-line bg-surface aspect-[4/3]">
+          <img src={image} alt={title} loading="lazy"
+            className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-opacity" />
         </div>
-      </div>
-      
-      {/* Project Content */}
-      <div className="p-6">
-        <div className="flex justify-between items-start mb-3">
-          <h3 className={`text-xl font-bold ${
-            darkMode ? 'text-white' : 'text-gray-900'
-          }`}>
-            {project.title}
-          </h3>
-          <span className={`px-2 py-1 rounded-lg text-xs font-medium ${
-            project.status === 'Completed' 
-              ? 'bg-green-100 text-green-700' 
-              : 'bg-orange-100 text-orange-700'
-          }`}>
-            {project.status}
-          </span>
+      )}
+      <div>
+        <div className="flex items-baseline justify-between gap-4 flex-wrap">
+          <h3 className="font-serif text-2xl sm:text-3xl text-ink">{title}</h3>
+          <span className="text-sm text-muted shrink-0">{status}</span>
         </div>
-        
-        <p className={`text-sm mb-4 leading-relaxed ${
-          darkMode ? 'text-gray-400' : 'text-gray-600'
-        }`}>
-          {project.description}
-        </p>
-        
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tech.slice(0, 4).map((tech, i) => (
-            <span 
-              key={i}
-              className={`px-3 py-1 rounded-lg text-xs font-medium ${
-                darkMode 
-                  ? 'bg-gray-700 text-gray-300 border border-gray-600' 
-                  : 'bg-gray-100 text-gray-600 border border-gray-200'
-              }`}
-            >
-              {tech}
-            </span>
+        <span className="text-sm text-olive uppercase tracking-widest">{category}</span>
+        <ul className="mt-4 space-y-2">
+          {points.map((p, i) => (
+            <li key={i} className="text-base text-muted leading-relaxed pl-5 relative max-w-2xl">
+              <span className="absolute left-0 text-olive">–</span>{p}
+            </li>
           ))}
-          {project.tech.length > 4 && (
-            <span 
-              className={`px-3 py-1 rounded-lg text-xs font-medium cursor-help ${
-                darkMode 
-                  ? 'bg-gray-700 text-gray-400 border border-gray-600' 
-                  : 'bg-gray-100 text-gray-500 border border-gray-200'
-              }`}
-              title={project.tech.slice(4).join(', ')}
-            >
-              +{project.tech.length - 4}
-            </span>
+        </ul>
+        <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
+          <span className="text-sm text-muted">{tech.join(' · ')}</span>
+          {code && (
+            <a href={code} target="_blank" rel="noopener noreferrer"
+              className="text-sm text-ink underline decoration-line underline-offset-4 hover:text-accent transition-colors shrink-0">
+              Code →
+            </a>
           )}
-        </div>
-        
-        {/* Action Buttons */}
-        <div className="flex gap-3">
-          <a 
-            href={project.code}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`flex-1 px-4 py-2 rounded-lg font-medium text-center text-sm border-2 transition-all duration-300 hover:scale-105 ${
-              darkMode 
-                ? 'border-gray-600 text-gray-300 hover:border-blue-500 hover:text-blue-400' 
-                : 'border-gray-300 text-gray-700 hover:border-blue-500 hover:text-blue-600'
-            }`}
-          >
-            💻 View Code
-          </a>
         </div>
       </div>
     </div>
   );
+}
+
+export default function Projects() {
+  const inProgress = projects.filter((p) => p.status === 'In progress');
+  const completed = projects.filter((p) => p.status === 'Completed');
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className="bg-bg text-ink min-h-screen font-mono">
       <Navbar />
-      
-      {/* Hero Section */}
-      <section className={`pt-24 pb-16 ${
-        darkMode 
-          ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900' 
-          : 'bg-gradient-to-br from-blue-50 via-white to-purple-50'
-      }`}>
-        <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto text-center">
-            <span className={`inline-block px-4 py-2 rounded-full text-sm font-medium mb-6 ${
-              darkMode 
-                ? 'bg-blue-900/50 text-blue-300 border border-blue-700' 
-                : 'bg-blue-100 text-blue-700 border border-blue-200'
-            }`}>
-              💼 My Work
-            </span>
-            
-            <h1 className={`text-5xl md:text-6xl font-bold mb-6 ${
-              darkMode ? 'text-white' : 'text-gray-900'
-            }`}>
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Projects
-              </span>
-            </h1>
-            
-            <p className={`text-xl leading-relaxed max-w-3xl mx-auto ${
-              darkMode ? 'text-gray-300' : 'text-gray-600'
-            }`}>
-              Collection of projects that i've worked on.
-            </p>
-          </div>
-        </div>
-      </section>
+      <main className="max-w-4xl mx-auto px-6 sm:px-8">
+        <section className="pt-16 pb-12">
+          <h1 className="font-serif text-5xl sm:text-6xl text-ink leading-tight">Projects.</h1>
+          <p className="mt-6 text-base sm:text-lg text-muted leading-relaxed max-w-xl">
+            A working record of things I've built, in code and outside of it.
+          </p>
+        </section>
 
-      {/* Projects Section */}
-      <section className={`py-20 ${
-        darkMode ? 'bg-gray-900' : 'bg-gray-50'
-      }`}>
-        <div className="container mx-auto px-6">
-          {/* Current Projects */}
-          {currentProjects.length > 0 && (
-            <div className="mb-20">
-              <h2 className={`text-3xl font-bold mb-12 text-center ${
-                darkMode ? 'text-white' : 'text-gray-900'
-              }`}>
-                Current Projects
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                {currentProjects.map((project, index) => (
-                  <ProjectCard key={`current-${index}`} project={project} index={index} />
-                ))}
-              </div>
-            </div>
-          )}
+        {inProgress.length > 0 && (
+          <section className="py-12 border-t border-line">
+            <h2 className="font-serif text-3xl sm:text-4xl text-blue leading-tight">In Progress.</h2>
+            <div className="mt-6">{inProgress.map((p) => <ProjectItem key={p.title} {...p} />)}</div>
+          </section>
+        )}
 
-          {/* Completed Projects */}
-          {completedProjects.length > 0 && (
-            <div>
-              <h2 className={`text-3xl font-bold mb-12 text-center ${
-                darkMode ? 'text-white' : 'text-gray-900'
-              }`}>
-                 Completed Projects
-              </h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                {completedProjects.map((project, index) => (
-                  <ProjectCard key={`completed-${index}`} project={project} index={index} />
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
-      
+        <section className="py-12 border-t border-line">
+          <h2 className="font-serif text-3xl sm:text-4xl text-blue leading-tight">Completed.</h2>
+          <div className="mt-6">{completed.map((p) => <ProjectItem key={p.title} {...p} />)}</div>
+        </section>
+      </main>
       <Footer />
     </div>
   );

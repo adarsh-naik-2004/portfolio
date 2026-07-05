@@ -1,19 +1,18 @@
-import { useParams, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import { useTheme } from '../ThemeContext';
+import { useParams, Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 // This would typically come from an API or database
 const blogPosts = {
-  1: {
-  title: "The End of an Era: Virat Kohli and the Spirit of Test Cricket",
-  date: "May 23, 2025",
-  readTime: "3 min read",
-  image: "/kohli.jpg",
-  category: "Cricket",
-  tags: ["Kohli", "Test Cricket", "Tribute", "India"],
-  author: "Adarsh Naik",
-  content: `
+  3: {
+    title: "The End of an Era: Virat Kohli and the Spirit of Test Cricket",
+    date: "May 23, 2025",
+    readTime: "3 min read",
+    image: "/kohli.jpg",
+    category: "Cricket",
+    tags: ["Kohli", "Test Cricket", "Tribute", "India"],
+    author: "Adarsh Naik",
+    content: `
 ## Introduction
 
 The cricketing world stood still when Virat Kohli announced his retirement from Test cricket. A career filled with fierce passion, unparalleled intensity, and unmatched consistency, Kohli redefined the modern-day Test cricketer. For me, a fan and a follower of the game, Kohli's Test journey wasn't just about stats—it was about inspiration, identity, and belief.
@@ -55,17 +54,25 @@ Virat Kohli's Test career was not just a chapter in cricket history—it was an 
 
 Thank you, King Kohli. Test cricket is richer because of you. And so am I.
 
-  `
+  `,
   },
-  2:{
-      title: "Demystifying Microservices: A Complete Guide to Modern Distributed Architecture",
-      date: "Jan 19, 2025",
-      readTime: "12 min read",
-      image: "/mico.png",
-      category: "Software Architecture",
-      tags: ["Microservices", "Architecture", "Distributed Systems", "API Gateway", "Service Mesh", "Event-Driven Architecture"],
-      author: "Adarsh Naik",
-      content: `
+  2: {
+    title:
+      "Demystifying Microservices: A Complete Guide to Modern Distributed Architecture",
+    date: "Jan 19, 2025",
+    readTime: "12 min read",
+    image: "/mico.png",
+    category: "Software Architecture",
+    tags: [
+      "Microservices",
+      "Architecture",
+      "Distributed Systems",
+      "API Gateway",
+      "Service Mesh",
+      "Event-Driven Architecture",
+    ],
+    author: "Adarsh Naik",
+    content: `
 ## Introduction
 
 Microservices architecture has fundamentally transformed how we build and deploy modern applications. What started as a response to the limitations of monolithic systems has evolved into the de facto standard for scalable, maintainable software systems. This comprehensive guide explores the depths of microservices architecture, from core principles to advanced implementation patterns, illustrated through real-world examples including my experience building CricStore—a multi-tenant eCommerce platform.
@@ -502,263 +509,260 @@ My journey with CricStore reinforced that microservices aren't just a technical 
 
 The future belongs to distributed systems, and microservices provide the foundation for that future. Whether you're building the next unicorn startup or modernizing enterprise systems, understanding microservices architecture is essential for any serious software engineer.
 
-    `
-  }
+    `,
+  },
+  1: {
+    title: "Why Prison Break Seasons 1 & 2 Are Still the Best Thing on TV",
+    date: "Dec 2025",
+    readTime: "6 min read",
+    image:
+      "https://images.unsplash.com/photo-1509281373149-e957c6296406?w=1400&q=80&auto=format&fit=crop",
+    category: "TV & Storytelling",
+    tags: [
+      "Prison Break",
+      "TV Series",
+      "Michael Scofield",
+      "Alex Mahone",
+      "Paul Kellerman",
+    ],
+    author: "Adarsh Naik",
+    content: `
+## A Love Letter to a Show That Refused to Blink
+
+I've watched a lot of television. Breaking Bad, The Wire, Better Call Saul, Succession — all brilliant in their own way. But if you asked me which show I'd rewatch tomorrow without a second thought, the answer is easy: **Prison Break**. Specifically, Seasons 1 and 2. Nothing else has ever made me feel that particular flavor of tension — the kind where you forget to blink for ten minutes at a stretch and only realize it when the credits roll.
+
+This is my love letter to it.
+
+## Season 1 — The Perfect Setup
+
+Season 1 is a genre exercise executed with the precision of a Swiss watch. A structural engineer walks into a maximum-security prison, willingly, with the blueprints tattooed across his upper body. On paper it sounds absurd. On screen it becomes one of the tightest, most re-watchable seasons of television ever made.
+
+- Every episode is a puzzle piece. Every conversation matters. Every prop shows up again.
+- The pacing is relentless — you can drop into any episode and immediately feel the pressure building.
+- The camera moves like it's part of the plan too. Everything is deliberate.
+
+The genius isn't just that the plan is clever — it's that the plan **keeps breaking**. Fox River doesn't cooperate. People die. Cellmates get transferred. Guards get replaced. And you watch Michael recalibrate in real time. That's the show's real trick: it's not about the escape, it's about improvisation under impossible constraints.
+
+## Season 2 — The Chase That Broke the Format
+
+Where Season 1 was a locked box, Season 2 is the entire United States. And it somehow works.
+
+- The show swaps corridors for highways and courtyards for cornfields — and never drops a beat.
+- It becomes eight men, eight motivations, eight trajectories. Each with their own gravity.
+- The web of consequences from Season 1 tightens rather than unravels.
+
+Season 2 is where the show earns its stripes as more than a gimmick. The runners keep running, the hunters keep hunting, and every character is forced to become someone new. It's a road-movie stitched into a thriller, and it's paced like a heart attack.
+
+## Michael Scofield — The Quiet Storm
+
+Michael is not a hero in the conventional sense. He's not louder or stronger or braver than the people around him. He's just always, always **thinking**.
+
+- He treats every problem like a system to be reverse-engineered.
+- He's kind in a way that costs him — and he pays that cost willingly.
+- His most human moments are silences: the pause before a lie, the look before a goodbye.
+
+Wentworth Miller plays him with a stillness that's almost uncomfortable. You keep waiting for him to crack, and he doesn't. That restraint is what makes the character feel real. He's the sort of engineer I aspire to be, honestly — someone whose confidence comes from having actually done the work.
+
+## Alex Mahone — The Show's Best Villain (Then Its Best Ally)
+
+If Michael is the smartest man in Season 1, Mahone is the smartest man in Season 2. And that's what makes their cat-and-mouse dance so satisfying.
+
+- Mahone gets Michael in a way no one else does. He *sees* the pattern.
+- William Fichtner brings a broken, obsessive quality that makes you sympathetic even as you're rooting against him.
+- His arc — from ruthless pursuer to unlikely partner — is one of the most earned redemptions in TV.
+
+The scenes where they finally sit across from each other are electric. Two engineers of very different kinds, recognizing each other.
+
+## Special Mention — Paul Kellerman
+
+Kellerman deserves his own paragraph. Nobody had any business being this compelling as a "middle-management" antagonist.
+
+- Cold, methodical, and utterly loyal — until he's not.
+- Paul Adelstein plays him like a man who's spent his whole life suppressing a soul, and you can see the exact moment it starts leaking out.
+- His late-Season-2 pivot is one of the most surprising, quietly moving turns in the show.
+
+"I'm gonna go ahead and open the door now." — one of the great TV line readings, delivered with the calm of a man who has finally chosen a side.
+
+## Why It Still Holds Up
+
+Two decades on, the show still works because it took its own premise seriously. It never winked at the camera. It let its characters be smart, be scared, be wrong, be sorry.
+
+- The stakes were real because the show was willing to lose people.
+- The tension was earned because the plans were earned.
+- The emotion was earned because the show never mistook cynicism for depth.
+
+Seasons 3 and beyond are… fine. But Seasons 1 and 2 are the reason I still tell people, unprompted, that Prison Break is my favorite show. Not the best-written show I've watched. Not the most acclaimed. My **favorite** — the one that made me care the hardest.
+
+## Closing Thought
+
+Every so often a show comes along that reminds you why you fell in love with television in the first place. For me, that show is Prison Break. For as long as there are dimly lit rooms, tattoo ink, and a plan folded three times into a shirt pocket — I'll keep coming back.
+
+Free them. Every time.
+  `,
+  },
 };
 
-const parseContent = (content, darkMode) => {
+const parseContent = (content) => {
   return content
-    .split('\n')
+    .split("\n")
     .map((line, index) => {
       // Headers
-      if (line.startsWith('### ')) {
+      if (line.startsWith("### ")) {
         return (
-          <h3 key={index} className={`text-2xl font-bold mt-10 mb-6 leading-tight ${
-            darkMode ? 'text-purple-300' : 'text-purple-700'
-          }`}>
+          <h3
+            key={index}
+            className="text-2xl font-serif text-blue mt-10 mb-4 leading-tight"
+          >
             {line.substring(4)}
           </h3>
         );
       }
-      if (line.startsWith('## ')) {
+      if (line.startsWith("## ")) {
         return (
-          <h2 key={index} className={`text-3xl font-bold mt-12 mb-8 leading-tight ${
-            darkMode ? 'text-white' : 'text-gray-900'
-          }`}>
+          <h2
+            key={index}
+            className="text-3xl font-serif text-ink mt-12 mb-6 leading-tight"
+          >
             {line.substring(3)}
           </h2>
         );
       }
-      
+
       // Bold text patterns
-      if (line.startsWith('**') && line.endsWith('**')) {
+      if (line.startsWith("**") && line.endsWith("**")) {
         return (
-          <p key={index} className={`text-xl font-semibold mt-6 mb-4 ${
-            darkMode ? 'text-purple-300' : 'text-purple-600'
-          }`}>
+          <p
+            key={index}
+            className="text-lg font-semibold text-accent mt-6 mb-3"
+          >
             {line.slice(2, -2)}
           </p>
         );
       }
-      
+
       // List items
-      if (line.startsWith('- **')) {
+      if (line.startsWith("- **")) {
         const match = line.match(/- \*\*(.*?)\*\*: (.*)/);
         if (match) {
           return (
-            <div key={index} className={`mb-4 pl-4 border-l-2 ${
-              darkMode ? 'border-purple-500' : 'border-purple-300'
-            }`}>
-              <span className={`font-semibold ${
-                darkMode ? 'text-purple-300' : 'text-purple-600'
-              }`}>
-                {match[1]}
-              </span>
-              <span className={`${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                : {match[2]}
-              </span>
-            </div>
+            <li
+              key={index}
+              className="text-base text-muted leading-relaxed pl-5 relative max-w-2xl mb-2"
+            >
+              <span className="absolute left-0 text-olive">–</span>
+              <span className="text-ink font-medium">{match[1]}</span>:{" "}
+              {match[2]}
+            </li>
           );
         }
       }
-      
+
       // Regular list items
-      if (line.startsWith('- ')) {
+      if (line.startsWith("- ")) {
         return (
-          <li key={index} className={`text-lg leading-relaxed mb-2 ${
-            darkMode ? 'text-gray-300' : 'text-gray-600'
-          }`}>
+          <li
+            key={index}
+            className="text-base text-muted leading-relaxed pl-5 relative max-w-2xl mb-2"
+          >
+            <span className="absolute left-0 text-olive">–</span>
             {line.substring(2)}
           </li>
         );
       }
-      
+
       // Empty lines
-      if (line.trim() === '') {
-        return <div key={index} className="h-4"></div>;
+      if (line.trim() === "") {
+        return <div key={index} className="h-3"></div>;
       }
-      
+
       // Regular paragraphs
       if (line.trim()) {
-        const processedLine = line.replace(/\*\*(.*?)\*\*/g, `<strong class="font-semibold ${
-          darkMode ? 'text-purple-300' : 'text-purple-600'
-        }">$1</strong>`);
-        
+        const processedLine = line.replace(
+          /\*\*(.*?)\*\*/g,
+          '<strong class="font-semibold text-accent">$1</strong>',
+        );
+
         return (
-          <p 
-            key={index} 
-            className={`text-lg leading-relaxed mb-6 ${
-              darkMode ? 'text-gray-300' : 'text-gray-600'
-            }`}
+          <p
+            key={index}
+            className="text-base sm:text-lg text-muted leading-relaxed mb-5 max-w-2xl"
             dangerouslySetInnerHTML={{ __html: processedLine }}
           />
         );
       }
-      
+
       return null;
     })
     .filter(Boolean);
 };
 
 export default function BlogPost() {
-  const { darkMode } = useTheme();
   const { id } = useParams();
   const post = blogPosts[id];
 
   if (!post) {
     return (
-      <div className={darkMode ? 'dark' : ''}>
+      <div className="bg-bg text-ink min-h-screen font-mono">
         <Navbar />
-        <div className={`min-h-screen pt-24 ${darkMode ? 'bg-gray-900' : 'bg-gray-50'}`}>
-          <div className="container mx-auto px-6 py-20 text-center">
-            <h1 className={`text-4xl font-bold mb-4 ${
-              darkMode ? 'text-white' : 'text-gray-900'
-            }`}>
-              Blog Post Not Found
-            </h1>
-            <p className={`text-lg mb-8 ${darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-              The blog post you're looking for doesn't exist.
-            </p>
-            <Link 
-              to="/blog"
-              className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300"
-            >
-              Back to Blogs
-            </Link>
-          </div>
-        </div>
+        <main className="max-w-4xl mx-auto px-6 sm:px-8 py-24 text-center">
+          <h1 className="font-serif text-4xl text-ink mb-4">Post not found.</h1>
+          <p className="text-sm text-muted mb-8">
+            The post you're looking for doesn't exist.
+          </p>
+          <Link
+            to="/blog"
+            className="text-sm text-ink underline decoration-line underline-offset-4 hover:text-accent transition-colors"
+          >
+            ← Back to Writing
+          </Link>
+        </main>
         <Footer />
       </div>
     );
   }
 
   return (
-    <div className={darkMode ? 'dark' : ''}>
+    <div className="bg-bg text-ink min-h-screen font-mono">
       <Navbar />
-      
-      <article className={`pt-24 min-h-screen ${
-        darkMode ? 'bg-gray-900' : 'bg-gray-50'
-      }`}>
-        <div className="container mx-auto px-6 py-12">
-          {/* Breadcrumb */}
-          <nav className="mb-8">
-            <div className="flex items-center space-x-2 text-sm">
-              <Link 
-                to="/blog" 
-                className={`hover:underline transition-colors ${
-                  darkMode ? 'text-purple-400' : 'text-purple-600'
-                }`}
-              >
-                Blogs
-              </Link>
-              <span className={`${darkMode ? 'text-gray-400' : 'text-gray-500'}`}>→</span>
-              <span className={`truncate ${
-                darkMode ? 'text-gray-300' : 'text-gray-600'
-              }`}>
-                {post.title}
-              </span>
-            </div>
-          </nav>
 
-          {/* Article Header */}
-          <header className="max-w-4xl mx-auto mb-16">
-            <div className="mb-6">
-              <span className={`px-4 py-2 rounded-full text-sm font-medium border ${
-                darkMode 
-                  ? 'bg-purple-900/50 text-purple-300 border-purple-700' 
-                  : 'bg-purple-100 text-purple-700 border-purple-200'
-              }`}>
-                {post.category}
-              </span>
-            </div>
-            
-            <h1 className={`text-4xl md:text-6xl font-bold mb-8 leading-tight ${
-              darkMode ? 'text-white' : 'text-gray-900'
-            }`}>
-              {post.title}
-            </h1>
+      <article className="max-w-4xl mx-auto px-6 sm:px-8">
+        <header className="pt-16 pb-12 border-b border-line">
+          <Link
+            to="/blog"
+            className="text-xs text-muted hover:text-ink transition-colors"
+          >
+            ← Writing
+          </Link>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-4 mb-8">
-              <div className="flex items-center gap-3">
-                <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                  darkMode 
-                    ? 'bg-gradient-to-r from-purple-500 to-pink-500' 
-                    : 'bg-gradient-to-r from-purple-400 to-pink-400'
-                }`}>
-                  <span className="text-white font-bold text-lg">
-                    {post.author.split(' ').map(n => n[0]).join('')}
-                  </span>
-                </div>
-                <div>
-                  <p className={`font-semibold text-lg ${
-                    darkMode ? 'text-white' : 'text-gray-900'
-                  }`}>
-                    {post.author}
-                  </p>
-                  <div className={`flex items-center gap-2 text-sm ${
-                    darkMode ? 'text-gray-400' : 'text-gray-500'
-                  }`}>
-                    <time>{post.date}</time>
-                    <span>•</span>
-                    <span>{post.readTime}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <h1 className="mt-6 font-serif text-4xl sm:text-5xl text-ink leading-tight">
+            {post.title}
+          </h1>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-3 mb-12">
-              {post.tags.map((tag, i) => (
-                <span 
-                  key={i}
-                  className={`px-4 py-2 rounded-lg text-sm border transition-colors ${
-                    darkMode 
-                      ? 'bg-gray-800 text-gray-300 border-gray-700 hover:border-purple-500' 
-                      : 'bg-gray-100 text-gray-700 border-gray-200 hover:border-purple-300'
-                  }`}
-                >
-                  #{tag}
-                </span>
-              ))}
-            </div>
-
-            {/* Featured Image */}
-            <div className="rounded-2xl overflow-hidden shadow-2xl mb-16">
-              <img 
-                src={post.image} 
-                alt={post.title}
-                className="w-full h-64 md:h-96 object-cover"
-                onError={(e) => {
-                  e.target.src = `data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDgwMCA0MDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSIjMzc0MTUxIi8+Cjx0ZXh0IHg9IjQwMCIgeT0iMjAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSIgZmlsbD0iIzlDQTNBRiIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiPk1pY3Jvc2VydmljZXMgQXJjaGl0ZWN0dXJlPC90ZXh0Pgo8L3N2Zz4K`;
-                }}
-              />
-            </div>
-          </header>
-
-          {/* Article Content */}
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
-              <div className="article-content">
-                {parseContent(post.content, darkMode)}
-              </div>
-            </div>
-
-            {/* Article Footer */}
-            <footer className={`mt-20 pt-8 border-t ${
-              darkMode ? 'border-gray-700' : 'border-gray-200'
-            }`}>
-              <div className="flex flex-col sm:flex-row justify-between items-center gap-6">
-                <Link 
-                  to="/blog"
-                  className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl text-lg"
-                >
-                  ← Back to Blogs
-                </Link>
-              </div>
-            </footer>
+          <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-muted">
+            <span>{post.author}</span>
+            <span>·</span>
+            <time>{post.date}</time>
+            <span>·</span>
+            <span>{post.readTime}</span>
+            <span>·</span>
+            <span className="text-yellow uppercase tracking-widest">
+              {post.category}
+            </span>
           </div>
-        </div>
+        </header>
+
+        <div className="py-12">{parseContent(post.content)}</div>
+
+        <footer className="pb-20 pt-8 border-t border-line">
+          <Link
+            to="/blog"
+            className="text-sm text-ink underline decoration-line underline-offset-4 hover:text-accent transition-colors"
+          >
+            ← Back to Writing
+          </Link>
+        </footer>
       </article>
+
       <Footer />
     </div>
   );
