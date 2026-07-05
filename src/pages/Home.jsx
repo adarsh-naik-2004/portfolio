@@ -86,7 +86,7 @@ const work = [
     title: 'AI-Powered Interview Platform',
     status: 'Feb 2025 – Mar 2025',
     stack: 'React · Node.js · MongoDB · Gemini AI',
-    image: 'public/ai-article-1-banner-shot-min.jpg',
+    image: '/ai-article-1-banner-shot-min.jpg',
     points: [
       'Full-stack interview simulator using Gemini for real-time feedback and scoring.',
       'JWT auth and optimised MongoDB schemas, wrapped in a React Query UI.',

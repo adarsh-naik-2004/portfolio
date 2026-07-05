@@ -16,7 +16,7 @@ const projects = [
   },
   {
     title: 'AI Interview Platform', status: 'Completed', category: 'Full Stack',
-    image: 'public/ai-article-1-banner-shot-min.jpg',
+    image: '/ai-article-1-banner-shot-min.jpg',
     points: [
       'Interview simulator using Gemini AI — real-time feedback, scoring, insights.',
       'JWT auth, optimised MongoDB schemas, React Query for data fetching.',
@@ -26,7 +26,7 @@ const projects = [
   },
   {
     title: 'Custom Reverse Proxy', status: 'Completed', category: 'Infrastructure',
-    image: 'public/proxy.png',
+    image: '/proxy.png',
     points: [
       'High-throughput reverse proxy from scratch — 8000+ concurrent connections at <100ms.',
       'Worker-thread clustering and circuit breaker patterns for resilience.',
@@ -47,7 +47,7 @@ const projects = [
   },
   {
     title: 'Mindwell', status: 'Completed', category: 'AI / ML',
-    image: 'public/mindwell.jpg',
+    image: '/mindwell.jpg',
     points: [
       'Multimodal mental-health assessment — BERT text + MFCC audio in TensorFlow.',
       'Flask web app with speech recognition, real-time chatbot, secure auth.',
